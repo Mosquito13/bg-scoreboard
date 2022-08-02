@@ -1,8 +1,8 @@
-import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import gamesMapping from '../../../mapping/games';
+import Carousel, { CarouselItem } from '../../components/Carousel';
 import GameCover from '../../components/GameCover';
-import './styles.scss';
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -10,21 +10,29 @@ const MainPage = () => {
   const games = [];
 
   Object.keys(gamesMapping).forEach((key) => {
-    const { id, cover } = gamesMapping[key];
+    const { id, title, cover } = gamesMapping[key];
+
+    // games.push(
+    //   <GameCover
+    //     key={id}
+    //     id={id}
+    //     cover={cover}
+    //     onClick={() => navigate(`/game/${id}`)}
+    //   />
+    // )
 
     games.push(
-      <GameCover
-        key={id}
-        id={id}
-        cover={cover}
-        onClick={() => navigate(`/game/${id}`)}
-      />
-    )
+      <CarouselItem key={id}>
+        <img src={cover} />
+      </CarouselItem>
+    );
   });
 
   return (
-    <div className="main-page">
-      {games}
+    <div className="w-full h-full py-32 flex items-center">
+      <Carousel>
+        {games}
+      </Carousel>
     </div>
   );
 };

@@ -7,8 +7,6 @@ import NotFoundPage from './common/pages/NotFound';
 import ArboretumMainPage from './arboretum/pages/Main';
 import store from './store';
 
-import './sass/styles.scss';
-
 const App = () => (
   <Provider store={store}>
     <BrowserRouter>
