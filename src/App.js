@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import MainPage from './common/pages/Main';
+import BaseLayout from './common/layouts/Base';
+import NotFoundPage from './common/pages/NotFound';
+import ArboretumMainPage from './arboretum/pages/Main';
+import store from './store';
+
+import './sass/styles.scss';
+
+const App = () => (
+  <Provider store={store}>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<BaseLayout />}>
+          <Route index element={<MainPage />} />
+          <Route path="/game/arboretum" element={<ArboretumMainPage />} />
+          <Route path="/not-found" element={<NotFoundPage />} />
+          <Route path="*" element={<Navigate to="/not-found" />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </Provider>
+);
 
 export default App;
