@@ -1,52 +1,66 @@
-import { Children, useCallback, useMemo, useState } from 'react';
+import classNames from 'classnames';
+import { useCallback, useState } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
-const CarouselItem = ({ children }) => (
-  <div className="h-full flex-[0_0_100%] flex items-center justify-center">
-    {children}
+const getItem = (id, content) => (
+  <div key={id} className="h-full flex-[0_0_100%] flex items-center justify-center">
+    {content}
   </div>
 );
 
-const Carousel = ({ children }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const itemCount = Children.count(children);
+const getNavigationArrow = (onClick, left) => {
+  const classes = classNames(
+    'w-10 h-10 rounded-full shadow bg-indigo-300 text-indigo-900 absolute top-2/4 translate-y-[-50%] text-4xl flex items-center justify-center cursor-pointer z-10',
+    left && 'left-2',
+    !left && 'right-2'
+  );
 
-  const translatePercent = useMemo(() => activeIndex * 100, [activeIndex]);
+  return (
+    <span className={classes} onClick={onClick}>
+      {left && <FiChevronLeft />}
+      {!left && <FiChevronRight />}
+    </span>
+  );
+};
+
+const Carousel = ({ items }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const itemsCount = items.length;
+
+  const translateStyle = { transform: `translateX(-${activeIndex * 100}%)` };
 
   const goToPrevious = useCallback(() => {
     let newActiveIndex = activeIndex - 1;
 
     if (newActiveIndex < 0) {
-      newActiveIndex = itemCount - 1;
+      newActiveIndex = itemsCount - 1;
     }
 
     setActiveIndex(newActiveIndex);
-  }, [activeIndex, itemCount]);
+  }, [activeIndex, itemsCount]);
 
   const goToNext = useCallback(() => {
     let newActiveIndex = activeIndex + 1;
 
-    if (newActiveIndex === itemCount) {
+    if (newActiveIndex === itemsCount) {
       newActiveIndex = 0;
     }
 
     setActiveIndex(newActiveIndex);
-  }, [activeIndex, itemCount]);
+  }, [activeIndex, itemsCount]);
 
   return (
-    <div className="w-full h-full overflow-hidden relative bg-slate-400">
-      <span onClick={goToPrevious} className="w-10 h-10 rounded-full shadow bg-red-400 text-black absolute top-2/4 translate-y-[-50%] left-2 text-4xl flex items-center justify-center cursor-pointer z-10">
-        <FiChevronLeft />
-      </span>
-      <span onClick={goToNext} className="w-10 h-10 rounded-full shadow bg-red-400 text-black absolute top-2/4 translate-y-[-50%] right-2 text-4xl flex items-center justify-center cursor-pointer z-10">
-        <FiChevronRight />
-      </span>
-      <div className={`w-full h-full flex transition translate-x-[-${translatePercent}%]`}>
-        {children}
+    <div className="w-full h-full overflow-hidden relative">
+      <div className={`w-full h-full flex transition`} style={translateStyle}>
+        {items.map(({ id, content }) => getItem(id, content))}
       </div>
+      <span className="bg-indigo-300 rounded-full px-4 py-2 text-lg font-semibold whitespace-nowrap text-indigo-900 absolute bottom-2 left-1/2 translate-x-[-50%] shadow">
+        {items[activeIndex].title}
+      </span>
+      {getNavigationArrow(goToPrevious, true)}
+      {getNavigationArrow(goToNext, false)}
     </div>
   );
 };
 
-export { CarouselItem };
 export default Carousel;

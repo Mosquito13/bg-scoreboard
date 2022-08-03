@@ -1,38 +1,24 @@
-import { useNavigate } from 'react-router-dom';
-
 import gamesMapping from '../../../mapping/games';
-import Carousel, { CarouselItem } from '../../components/Carousel';
-import GameCover from '../../components/GameCover';
+import Carousel from '../../components/Carousel';
 
 const MainPage = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const games = [];
+  const items = [];
 
   Object.keys(gamesMapping).forEach((key) => {
     const { id, title, cover } = gamesMapping[key];
 
-    // games.push(
-    //   <GameCover
-    //     key={id}
-    //     id={id}
-    //     cover={cover}
-    //     onClick={() => navigate(`/game/${id}`)}
-    //   />
-    // )
-
-    games.push(
-      <CarouselItem key={id}>
-        <img src={cover} />
-      </CarouselItem>
-    );
+    items.push({
+      id,
+      title,
+      content: <img className="h-full" src={cover} alt={id} />
+    });
   });
 
   return (
-    <div className="w-full h-full py-32 flex items-center">
-      <Carousel>
-        {games}
-      </Carousel>
+    <div className="w-full h-4/5 flex items-center">
+      <Carousel items={items} />
     </div>
   );
 };

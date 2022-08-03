@@ -6,7 +6,7 @@ const BaseLayout = () => {
       <div className="flex-[0_0_5rem] flex items-center justify-center text-indigo-900 text-4xl font-bold bg-indigo-300">
         BG ScoreBoard (wip)
       </div>
-      <div className="flex-1 p-4">
+      <div className="flex-1 p-4 overflow-hidden">
         <Outlet />
       </div>
     </div>
