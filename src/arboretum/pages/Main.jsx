@@ -1,10 +1,10 @@
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { nextStep, previousStep } from '../../redux';
-import { getStep } from '../../redux/selectors';
+import { nextStep, previousStep } from '../redux';
+import { getStep } from '../redux/selectors';
 
-import Button from '../../../common/components/Button';
+// import Button from '../../../common/components/Button';
 
 const ArboretumMainPage = () => {
   const dispatch = useDispatch();
@@ -21,14 +21,14 @@ const ArboretumMainPage = () => {
   return (
     <div className="arboretum-main-page">
       <h1>{step}</h1>
-      <Button
+      {/* <Button
         text="+"
         onClick={incrementStep}
       />
       <Button
         text="-"
-        onClick={decrementStep}
-      />
+        onClick={decrementStep} */}
+      {/* /> */}
     </div>
   );
 };

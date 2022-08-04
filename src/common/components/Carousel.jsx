@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { useCallback, useState } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { useSwipeable } from 'react-swipeable';
 
 const getItem = (id, content) => (
   <div key={id} className="h-full flex-[0_0_100%] flex items-center justify-center">
@@ -49,8 +50,13 @@ const Carousel = ({ items }) => {
     setActiveIndex(newActiveIndex);
   }, [activeIndex, itemsCount]);
 
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: goToNext,
+    onSwipedRight: goToPrevious
+  });
+
   return (
-    <div className="w-full h-full overflow-hidden relative">
+    <div className="w-full h-full overflow-hidden relative" {...swipeHandlers}>
       <div className={`w-full h-full flex transition`} style={translateStyle}>
         {items.map(({ id, content }) => getItem(id, content))}
       </div>
