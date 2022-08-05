@@ -10,7 +10,10 @@ const MainPage = () => {
   const items = [];
 
   Object.keys(gamesMapping).forEach((key) => {
-    const { id, title, cover } = gamesMapping[key];
+    const { id, title, cover, routes: [firstRoute] } = gamesMapping[key];
+
+    // FIXME: this is here while another game routes are uninplemented
+    const { path } = firstRoute || {};
 
     items.push({
       id,
@@ -19,7 +22,7 @@ const MainPage = () => {
         <GameCover
           id={id}
           cover={cover}
-          onClick={() => navigate(`/game/${id}`)}
+          onClick={() => navigate(path)}
         />
       )
     });
