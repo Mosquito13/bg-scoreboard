@@ -1,20 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import games from '../../mapping/games';
-
 const initialState = {
-  players: []
+  playerList: []
 };
 
 const arboretumSlice = createSlice({
-  name: games.ARBORETUM.id,
+  name: 'arboretum',
   initialState,
   reducers: {
-    setPlayers(state, action) {
-      state.players = action.payload;
+    setPlayerList(state, action) {
+      state.playerList = action.payload;
     }
   }
 });
 
-export const { nextStep, previousStep } = arboretumSlice.actions;
+export const { setPlayerList } = arboretumSlice.actions;
 export default arboretumSlice.reducer;

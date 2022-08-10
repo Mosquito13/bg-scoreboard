@@ -1,15 +1,20 @@
 import { useCallback, useState } from 'react';
 import { FiMinus, FiPlus } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import Button from '../../common/components/Button';
 import TextField from '../../common/components/TextField';
-import StepButton, { TYPE_NEXT } from '../../common/components/StepButton';
+import StepButton, { TYPE_NEXT, TYPE_PREVIOUS } from '../../common/components/StepButton';
+
+import { setPlayerList } from '../redux';
 
 const MIN_PLAYERS = 2;
 const MAX_PLAYERS = 4;
 
 const PlayerList = () => {
+
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [players, setPlayers] = useState(['', '']);
 
@@ -76,8 +81,15 @@ const PlayerList = () => {
         </div>
       ))}
       <StepButton
+        type={TYPE_PREVIOUS}
+        onClick={() => navigate(-1)}
+      />
+      <StepButton
         type={TYPE_NEXT}
-        onClick={() => navigate('../arboretum/colors', { replace: true })}
+        onClick={() => {
+          dispatch(setPlayerList(players));
+          navigate(`../arboretum/colors/0`);
+        }}
       />
     </div>
   );

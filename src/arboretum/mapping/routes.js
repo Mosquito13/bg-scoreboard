@@ -8,7 +8,7 @@ const routes = [
     Cmp: PlayerList
   },
   {
-    path: 'arboretum/colors',
+    path: 'arboretum/colors/:colorIndex',
     Cmp: Colors
   },
   {

@@ -1,5 +1,3 @@
-import gamesMapping from '../../mapping/games';
+const getSlice = (state) => state.arboretum;
 
-const getSlice = (state) => state[gamesMapping.ARBORETUM.id];
-
-export const getStep = (state) => getSlice(state).step;
+export const getPlayerList = (state) => getSlice(state).playerList;
