@@ -1,48 +1,66 @@
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useCallback, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import StepButton, { TYPE_NEXT, TYPE_PREVIOUS } from '../../common/components/StepButton';
+import { useDispatch, useSelector } from 'react-redux';
 
-import colorMapping from '../mapping/color';
+import StepButton, { TYPE_NEXT, TYPE_PREVIOUS } from '../../common/components/StepButton';
+import NumberField from '../../common/components/Fields/NumberField';
+import SvgWrapper from '../../common/components/SvgWrapper';
+
 import { getPlayerList } from '../redux/selectors';
+import colorMapping from '../mapping/color';
+import { setPlayersScoreByColor } from '../redux';
+
+const initialValues = ['', '', '', ''];
 
 const Colors = () => {
   const { colorIndex } = useParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const playerList = useSelector(getPlayerList);
-  const colorIcons = [];
+  const [score, setScore] = useState(initialValues);
 
-  // Object.keys(colorMapping).forEach((key) => {
-  //   const { IconCmp, title } = colorMapping[key];
+  const setScoreByIndex = useCallback((value, index) => {
+    const newScore = [...score];
 
-  //   colorIcons.push(
-  //     <div key={key} className="flex items-center h-12">
-  //       <div className="w-12 h-full [&>svg]:w-full [&>svg]:h-full">
-  //         <IconCmp />
-  //       </div>
-  //       <div className="ml-4">{title}</div>
-  //     </div>
-  //   );
-  // });
+    newScore[index] = value;
 
-  // return <div className="flex flex-col bg-slate-500">{playerList}</div>;
+    setScore(newScore);
+  }, [score]);
 
-  // const [currentColorIndex, setCurrentColorIndex] = useState(0);
   const colorKeys = Object.keys(colorMapping);
   const currentColor = colorKeys[colorIndex];
-  const { title, IconCmp } = colorMapping[currentColor];
+  const { title, hex, IconCmp } = colorMapping[currentColor];
+
+  const colorStyle = { color: hex, borderColor: hex };
 
   return (
-    <div className="w-full h-full flex flex-col items-center bg-slate-500">
-      <div className="w-full flex items-center p-4 rounded-full border-2 border-blue-800 bg-white">
-        <div className="">
-          <IconCmp />
-        </div>
-        <div className="text-blue-800 text-2xl font-bold">
-          {title}
+    <div className="w-full h-full flex flex-col items-center">
+      <div className="w-full h-16 flex items-center justify-between py-2 px-6 rounded-full border-4 bg-white text-2xl font-semibold whitespace-nowrap" style={colorStyle}>
+        {title}
+        <div className="h-full w-10">
+          <SvgWrapper>
+            <IconCmp />
+          </SvgWrapper>
         </div>
       </div>
-      {colorKeys[colorIndex]}
+      <div className="w-full mt-4 flex flex-col">
+        {playerList.map((name, index) => (
+          <div key={index} className="flex mt-4">
+            <div className="flex-1 flex items-center text-xl overflow-hidden">
+              <span className="whitespace-nowrap text-ellipsis overflow-hidden">
+                {name}
+              </span>
+            </div>
+            <div className="flex-[0_0_5rem] ml-2">
+              <NumberField
+                min={0}
+                value={score[index]}
+                onChange={(value) => setScoreByIndex(value, index)}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
       <StepButton
         type={TYPE_PREVIOUS}
         onClick={() => navigate(-1)}
@@ -50,7 +68,6 @@ const Colors = () => {
       <StepButton
         type={TYPE_NEXT}
         onClick={() => {
-          // dispatch(setPlayerList(players));
           const nextIndex = parseInt(colorIndex, 10) + 1;
           let nextRoute = '../arboretum/result';
 
@@ -58,6 +75,11 @@ const Colors = () => {
             nextRoute = `../arboretum/colors/${nextIndex}`;
           }
 
+          dispatch(setPlayersScoreByColor({
+            color: currentColor,
+            score
+          }));
+          setScore(initialValues);
           navigate(nextRoute);
         }}
       />

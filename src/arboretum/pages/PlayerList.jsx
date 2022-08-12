@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import Button from '../../common/components/Button';
-import TextField from '../../common/components/TextField';
+import TextField from '../../common/components/Fields/TextField';
 import StepButton, { TYPE_NEXT, TYPE_PREVIOUS } from '../../common/components/StepButton';
 
 import { setPlayerList } from '../redux';

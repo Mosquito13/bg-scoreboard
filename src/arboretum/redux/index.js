@@ -1,7 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import { normalizePlayerNames } from '../helpers';
+
 const initialState = {
-  playerList: []
+  playerList: [],
+  score: {}
 };
 
 const arboretumSlice = createSlice({
@@ -9,10 +12,16 @@ const arboretumSlice = createSlice({
   initialState,
   reducers: {
     setPlayerList(state, action) {
-      state.playerList = action.payload;
+      state.playerList = normalizePlayerNames(action.payload);
+    },
+    setPlayersScoreByColor(state, action) {
+      state.score = {
+        ...state.score,
+        [action.payload.color]: action.payload.score
+      };
     }
   }
 });
 
-export const { setPlayerList } = arboretumSlice.actions;
+export const { setPlayerList, setPlayersScoreByColor } = arboretumSlice.actions;
 export default arboretumSlice.reducer;
