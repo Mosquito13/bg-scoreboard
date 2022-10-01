@@ -28,7 +28,7 @@ const Result = () => {
 
           return (
             <div key={`${colorKey}_${index}`} className="flex-1 flex justify-end pr-2 text-xl font-bold">
-              {score[colorKey][index]}
+              {score[colorKey][index] || 0}
             </div>
           );
         })}
@@ -46,14 +46,14 @@ const Result = () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-col overflow-y-auto bg-indigo-900 odd:bg-red-700">
+      <div className="flex flex-col overflow-y-auto bg-indigo-900">
         {colorRows}
       </div>
       <div className="flex border-t-2 border-t-blue-400 text-lg font-semibold bg-slate-800">
         <div className="flex-[0_0_3rem]" />
         {playerList.map((player, index) => (
-          <div key={index} className="flex-1 flex justify-end mx-0.5">
-            {totals[index]}
+          <div key={index} className="flex-1 flex justify-end mx-0.5 pr-2">
+            {totals[index] || 0}
           </div>
         ))}
       </div>

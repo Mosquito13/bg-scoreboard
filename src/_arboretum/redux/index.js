@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { normalizePlayerNames } from '../helpers';
+import { normalizePlayerNames } from '../../common/helpers';
 
 const initialState = {
   playerList: [],

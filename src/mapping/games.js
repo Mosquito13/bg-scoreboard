@@ -3,7 +3,8 @@ import FeastForOdinCover from '../assets/image/FeastForOdinCover.png';
 import BrazilImperialCover from '../assets/image/BrazilImperialCover.png';
 import GreatWesternTrailCover from '../assets/image/GreatWesternTrailCover.png';
 
-import arboretumRoutes from '../arboretum/mapping/routes';
+import arboretumRoutes from '../_arboretum/mapping/routes';
+import greatWesternTrailRoutes from '../_greatWesternTrail/mapping/routes';
 
 const gamesMapping = {
   ARBORETUM: {
@@ -16,7 +17,7 @@ const gamesMapping = {
     id: 'greatWesternTrail',
     title: 'Great Western Trail',
     cover: GreatWesternTrailCover,
-    routes: []
+    routes: greatWesternTrailRoutes
   },
   BRAZIL_IMPERIAL: {
     id: 'brazilImperial',

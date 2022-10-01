@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import arboretumReducer from '../arboretum/redux';
+import arboretumReducer from '../_arboretum/redux';
+import greatWesternTrailReducer from '../_greatWesternTrail/redux';
 
 const store = configureStore({
   reducer: {
-    arboretum: arboretumReducer
+    arboretum: arboretumReducer,
+    greatWesternTrail: greatWesternTrailReducer
   }
 });
 

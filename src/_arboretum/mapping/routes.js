@@ -4,7 +4,7 @@ import Result from '../pages/Result';
 
 const routes = [
   {
-    path: 'arboretum/playerList',
+    path: 'arboretum/player-list',
     Cmp: PlayerList
   },
   {
