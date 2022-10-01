@@ -16,9 +16,7 @@ const Result = () => {
     rows.push(
       <div key={key} className="h-12 flex items-center justify-center bg-indigo-900 odd:bg-indigo-800">
         <div className="flex-[0_0_3rem] p-1 overflow-hidden">
-          {/* <div className="bg-slate-50 rounded-full p-0.5 border-2 border-slate-800"> */}
-            {key}
-          {/* </div> */}
+          {key}
         </div>
         {playerList.map((player, index) => {
           let storedPlayerCriteriaScore = score[criteria[key].key][index];
