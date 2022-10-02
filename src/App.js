@@ -1,5 +1,5 @@
 import { Provider } from 'react-redux';
-import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
+import { Navigate, Routes, Route, HashRouter } from 'react-router-dom';
 
 import NotFoundPage from './common/pages/NotFound';
 import BaseLayout from './common/layouts/Base';
@@ -26,16 +26,16 @@ const buildGameRoutes = () => {
 
 const App = () => (
   <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
-        <Route path="/bg-scoreboard/" element={<BaseLayout />}>
+        <Route path="/" element={<BaseLayout />}>
           <Route index element={<MainPage />} />
           {buildGameRoutes()}
           <Route path="not-found" element={<NotFoundPage />} />
           <Route path="*" element={<Navigate to="not-found" replace />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </Provider>
 );
 
