@@ -28,7 +28,7 @@ const App = () => (
   <Provider store={store}>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<BaseLayout />}>
+        <Route path="/bg-scoreboard/" element={<BaseLayout />}>
           <Route index element={<MainPage />} />
           {buildGameRoutes()}
           <Route path="not-found" element={<NotFoundPage />} />
