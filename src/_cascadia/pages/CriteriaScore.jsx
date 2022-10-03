@@ -9,6 +9,7 @@ import PlayerScoreInput from '../../common/components/PlayerScoreInput';
 import { findCriteriaIndex } from '../helpers';
 import { setCriteriaScore } from '../redux';
 import { getPlayerList } from '../redux/selectors';
+import SvgWrapper from '../../common/components/SvgWrapper';
 
 const initialValues = [0, 0, 0, 0];
 
@@ -22,6 +23,7 @@ const Criteria = () => {
   const criteriaKeys = Object.keys(criteria);
   const currentCriteriaIndex = findCriteriaIndex(criteriaId);
   const currentCriteria = criteria[criteriaKeys[currentCriteriaIndex]];
+  const { title, IconCmp } = currentCriteria;
 
   const setScoreByIndex = useCallback((value, index) => {
     const newScore = [...score];
@@ -53,7 +55,12 @@ const Criteria = () => {
   return (
     <NavigationStep onClickNext={handleClickNext}>
       <div className="w-full h-16 flex items-center justify-center text-2xl">
-        {currentCriteria.title}
+        <div className="h-full w-10 mr-4">
+          <SvgWrapper>
+            <IconCmp />
+          </SvgWrapper>
+        </div>
+        <span>{title}</span>
       </div>
       <PlayerScoreInput
         players={playerList}

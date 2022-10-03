@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import SvgWrapper from '../../common/components/SvgWrapper';
 import { calculateHabitatBonus } from '../helpers';
 
 import criteria from '../mapping/criteria';
@@ -13,6 +14,7 @@ const Result = () => {
 
   Object.keys(criteria).forEach((key) => {
     const currentCriteria = criteria[key];
+    const { IconCmp } = currentCriteria;
     let habitatBonus = [];
 
     if (currentCriteria.habitat) {
@@ -21,8 +23,10 @@ const Result = () => {
 
     rows.push(
       <div key={key} className="h-12 flex items-center justify-center bg-indigo-900 odd:bg-indigo-800">
-        <div className="flex-[0_0_3rem] p-1 overflow-hidden">
-          {key}
+        <div className="flex-[0_0_3rem] p-1 h-full">
+          <SvgWrapper>
+            <IconCmp />
+          </SvgWrapper>
         </div>
         {playerList.map((player, index) => {
           const storedCriteriaScore = parseInt(score[currentCriteria.id][index], 10) || 0;

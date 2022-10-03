@@ -10,6 +10,7 @@ const BaseField = ({ onChange, ...otherProps }) => {
 		<input
 			{...otherProps}
 			onChange={handleChange}
+			onFocus={(evt) => evt.target.select()}
 			className="w-full p-2 rounded-md border-2 text-lg text-indigo-900 font-semibold border-blue-400"
 		/>
 	);
