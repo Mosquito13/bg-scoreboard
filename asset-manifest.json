@@ -1,13 +1,24 @@
 {
   "files": {
-    "main.css": "/bg-scoreboard/static/css/main.32a36c07.css",
-    "main.js": "/bg-scoreboard/static/js/main.91f46d36.js",
+    "main.css": "/bg-scoreboard/static/css/main.456b59d2.css",
+    "main.js": "/bg-scoreboard/static/js/main.12492a49.js",
     "static/media/GreatWesternTrailCover.png": "/bg-scoreboard/static/media/GreatWesternTrailCover.5e71eb37b2f537783a04.png",
     "static/media/BrazilImperialCover.png": "/bg-scoreboard/static/media/BrazilImperialCover.c4c082a6626162ab43e6.png",
     "static/media/FeastForOdinCover.png": "/bg-scoreboard/static/media/FeastForOdinCover.8abcf95f898e3867d8fb.png",
     "static/media/ArboretumCover.png": "/bg-scoreboard/static/media/ArboretumCover.269af546f86d1f8f36d8.png",
+    "static/media/fox.svg": "/bg-scoreboard/static/media/fox.b7ddfdbf4733b3df5d9f2a5b2146f356.svg",
+    "static/media/elk.svg": "/bg-scoreboard/static/media/elk.d06c96f559abf5ad213d9a0979aae657.svg",
+    "static/media/bear.svg": "/bg-scoreboard/static/media/bear.019552f57840538db89d0e85fad87903.svg",
+    "static/media/salmon.svg": "/bg-scoreboard/static/media/salmon.1035eab8d1064cd28267591c10547a43.svg",
+    "static/media/hawk.svg": "/bg-scoreboard/static/media/hawk.5af8c2656dc89a5f46d10324b29e04c2.svg",
     "static/media/CascadiaCover.png": "/bg-scoreboard/static/media/CascadiaCover.4b334069a9355badbc5a.png",
-    "static/media/travolta.svg": "/bg-scoreboard/static/media/travolta.483a78f49a5570603e4f4b538dc38a35.svg",
+    "static/media/nature_token.svg": "/bg-scoreboard/static/media/nature_token.e426ef069054b9e789b8e5cf20c44774.svg",
+    "static/media/travolta.svg": "/bg-scoreboard/static/media/travolta.e039d6c5c4b36d7452a18d0e0eb55d07.svg",
+    "static/media/forests.svg": "/bg-scoreboard/static/media/forests.f26143a4d20c1bf007371601b0c2c5f8.svg",
+    "static/media/mountains.svg": "/bg-scoreboard/static/media/mountains.46bdd4603ec9d2890f9ada80bc7c9fa6.svg",
+    "static/media/rivers.svg": "/bg-scoreboard/static/media/rivers.92e5500db0bb7923542846d3008d46a2.svg",
+    "static/media/wetlands.svg": "/bg-scoreboard/static/media/wetlands.d199188969026a1bb9ca794d10c2b5f5.svg",
+    "static/media/prairies.svg": "/bg-scoreboard/static/media/prairies.0cb55104c100e588bb45102c097a2435.svg",
     "static/media/light_green.svg": "/bg-scoreboard/static/media/light_green.4deca09d3df3c5ec72429e628295a061.svg",
     "static/media/red.svg": "/bg-scoreboard/static/media/red.710c9bb472402a957bddc5e9a9484d78.svg",
     "static/media/yellow.svg": "/bg-scoreboard/static/media/yellow.1c23bbf6820c592df420338f1177a79f.svg",
@@ -19,11 +30,11 @@
     "static/media/gray.svg": "/bg-scoreboard/static/media/gray.e3a36e02a61eaa460ba30ce24f960646.svg",
     "static/media/dark_green.svg": "/bg-scoreboard/static/media/dark_green.773200b54f6f1b45791a92a7279f9657.svg",
     "index.html": "/bg-scoreboard/index.html",
-    "main.32a36c07.css.map": "/bg-scoreboard/static/css/main.32a36c07.css.map",
-    "main.91f46d36.js.map": "/bg-scoreboard/static/js/main.91f46d36.js.map"
+    "main.456b59d2.css.map": "/bg-scoreboard/static/css/main.456b59d2.css.map",
+    "main.12492a49.js.map": "/bg-scoreboard/static/js/main.12492a49.js.map"
   },
   "entrypoints": [
-    "static/css/main.32a36c07.css",
-    "static/js/main.91f46d36.js"
+    "static/css/main.456b59d2.css",
+    "static/js/main.12492a49.js"
   ]
 }
