@@ -1,15 +1,22 @@
-import { Outlet, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { Outlet } from 'react-router-dom';
 import Div100vh from 'react-div-100vh';
 
+import LogoBanner from '../components/LogoBanner';
+import GameSelectionContext from '../contexts/GameSelection';
+import gamesMapping from '../../mapping/games';
+
 const BaseLayout = () => {
-  const navigate = useNavigate();
+  const { game } = useContext(GameSelectionContext);
+
+  const mappedGame = Object.values(gamesMapping).find(({ id }) => id === game);
+  const theme = mappedGame?.theme || '';
+  const logo = mappedGame?.logo;
 
   return (
     <Div100vh>
-      <div className="w-full h-full overflow-hidden flex flex-col text-white bg-gradient-to-b from-indigo-900 to-blue-900">
-        <div onClick={() => navigate('/')} className="flex-[0_0_5rem] flex items-center justify-center font-metal-mania text-5xl text-indigo-900 bg-gradient-to-b from-indigo-300 to-blue-300">
-          BG Scoreboard
-        </div>
+      <div className={`${theme} w-full h-full overflow-hidden flex flex-col bg-gradient-to-b from-primary to-primary-alt text-secondary font-inter select-none`}>
+        <LogoBanner LogoCmp={logo} />
         <div className="flex-1 p-4 overflow-hidden">
           <Outlet />
         </div>

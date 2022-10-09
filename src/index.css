@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #18181b;
+    --color-primary-alt: #1c1917;
+    --color-secondary: #a1a1aa;
+    --color-secondary-alt: #d4d4d8;
+  }
+
+  .theme-arboretum {
+    --color-primary: #f0f9ff;
+    --color-primary-alt: #bae6fd;
+    --color-secondary: #362871;
+    --color-secondary-alt: #c6c0db;
+  }
+
+  .theme-cascadia {
+    --color-primary: #0091d3;
+    --color-primary-alt: #5cb0e4;
+    --color-secondary: #2d363f;
+    --color-secondary-alt: #bbaeb1;
+  }
+}

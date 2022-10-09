@@ -1,4 +1,4 @@
-const BooleanField = ({ checked, onChange, disabled }) => (
+const BooleanField = ({ checked, onChange }) => (
   <input
     className="w-11 h-11"
     type="checkbox"

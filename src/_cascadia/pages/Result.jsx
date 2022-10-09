@@ -22,7 +22,7 @@ const Result = () => {
     }
 
     rows.push(
-      <div key={key} className="h-12 flex items-center justify-center bg-indigo-900 odd:bg-indigo-800">
+      <div key={key} className="h-12 flex items-center justify-center bg-primary-alt odd:bg-primary">
         <div className="flex-[0_0_3rem] p-1 h-full">
           <SvgWrapper>
             <IconCmp />
@@ -50,8 +50,8 @@ const Result = () => {
   });
 
   return (
-    <div className="w-full max-h-full flex flex-col border-2 border-blue-400 rounded-md overflow-hidden">
-      <div className="flex border-b-2 border-b-blue-400 text-lg font-semibold bg-slate-800">
+    <div className="w-full max-h-full flex flex-col border-2 border-secondary rounded-md overflow-hidden">
+      <div className="flex border-b-2 border-b-secondary text-lg font-semibold bg-secondary text-secondary-alt">
         <div className="flex-[0_0_3rem]" />
         {playerList.map((player, index) => (
           <div key={index} className="flex-1 flex justify-end mx-0.5 overflow-hidden">
@@ -59,10 +59,10 @@ const Result = () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-col overflow-y-auto bg-indigo-900">
+      <div className="flex flex-col overflow-y-auto">
         {rows}
       </div>
-      <div className="flex border-t-2 border-t-blue-400 text-lg font-semibold bg-slate-800">
+      <div className="flex border-t-2 border-t-secondary text-lg font-semibold bg-secondary text-secondary-alt">
         <div className="flex-[0_0_3rem]" />
         {playerList.map((player, index) => (
           <div key={index} className="flex-1 flex justify-end mx-0.5 pr-2">

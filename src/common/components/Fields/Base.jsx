@@ -11,7 +11,7 @@ const BaseField = ({ onChange, ...otherProps }) => {
 			{...otherProps}
 			onChange={handleChange}
 			onFocus={(evt) => evt.target.select()}
-			className="w-full p-2 rounded-md border-2 text-lg text-indigo-900 font-semibold border-blue-400"
+			className="w-full p-2 rounded-md border-2 text-lg text-secondary font-semibold border-secondary bg-white placeholder:font-normal"
 		/>
 	);
 };

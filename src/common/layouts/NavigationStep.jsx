@@ -1,6 +1,11 @@
 import { useNavigate } from 'react-router-dom';
+import { BsCaretLeftFill, BsCaretRightFill } from 'react-icons/bs';
 
-import StepButton, { TYPE_NEXT, TYPE_PREVIOUS } from '../components/StepButton';
+import NavigationButton from '../components/NavigationButton';
+import Sticked, {
+  POSITION_BOTTOM_LEFT,
+  POSITION_BOTTOM_RIGHT
+} from '../components/Sticked';
 
 const NavigationStep = ({ onClickNext, children }) => {
   const navigate = useNavigate();
@@ -8,8 +13,20 @@ const NavigationStep = ({ onClickNext, children }) => {
   return (
     <div className="w-full h-full flex flex-col items-center">
       {children}
-      <StepButton type={TYPE_PREVIOUS} onClick={() => navigate(-1)} />
-      <StepButton type={TYPE_NEXT} onClick={onClickNext} />
+      <Sticked position={POSITION_BOTTOM_LEFT}>
+        <NavigationButton
+          onClick={() => navigate(-1)}
+          IconCmp={BsCaretLeftFill}
+          title="Anterior"
+        />
+      </Sticked>
+      <Sticked position={POSITION_BOTTOM_RIGHT}>
+        <NavigationButton
+          onClick={onClickNext}
+          IconCmp={BsCaretRightFill}
+          title="Próximo"
+        />
+      </Sticked>
     </div>
   );
 };

@@ -15,13 +15,11 @@ const Result = () => {
     const { IconCmp } = colorMapping[colorKey];
 
     colorRows.push(
-      <div key={colorKey} className="h-12 flex items-center justify-center bg-indigo-900 odd:bg-indigo-800">
-        <div className="flex-[0_0_3rem] p-1">
-          <div className="bg-slate-50 rounded-full p-0.5 border-2 border-slate-800">
-            <SvgWrapper>
-              <IconCmp />
-            </SvgWrapper>
-          </div>
+      <div key={colorKey} className="h-12 flex items-center justify-center bg-primary odd:bg-primary-alt">
+        <div className="flex-[0_0_3rem] p-1.5">
+          <SvgWrapper>
+            <IconCmp />
+          </SvgWrapper>
         </div>
         {playerList.map((player, index) => {
           totals[index] += parseInt(score[colorKey][index], 10) || 0;
@@ -37,8 +35,8 @@ const Result = () => {
   });
 
   return (
-    <div className="w-full max-h-full flex flex-col border-2 border-blue-400 rounded-md overflow-hidden">
-      <div className="flex border-b-2 border-b-blue-400 text-lg font-semibold bg-slate-800">
+    <div className="w-full max-h-full flex flex-col border-2 border-secondary rounded-md overflow-hidden">
+      <div className="flex border-b-2 border-b-secondary text-lg font-semibold bg-secondary text-primary">
         <div className="flex-[0_0_3rem]" />
         {playerList.map((player, index) => (
           <div key={index} className="flex-1 flex justify-end mx-0.5 overflow-hidden">
@@ -46,10 +44,10 @@ const Result = () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-col overflow-y-auto bg-indigo-900">
+      <div className="flex flex-col overflow-y-auto">
         {colorRows}
       </div>
-      <div className="flex border-t-2 border-t-blue-400 text-lg font-semibold bg-slate-800">
+      <div className="flex border-t-2 border-t-secondary text-lg font-semibold bg-secondary text-primary">
         <div className="flex-[0_0_3rem]" />
         {playerList.map((player, index) => (
           <div key={index} className="flex-1 flex justify-end mx-0.5 pr-2">

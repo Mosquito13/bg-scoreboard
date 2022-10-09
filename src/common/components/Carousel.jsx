@@ -11,7 +11,7 @@ const getItem = (id, content) => (
 
 const getNavigationArrow = (onClick, left) => {
   const classes = classNames(
-    'w-10 h-10 rounded-full shadow bg-indigo-300 text-indigo-900 absolute top-2/4 translate-y-[-50%] text-4xl flex items-center justify-center cursor-pointer z-10',
+    'w-10 h-10 rounded-full shadow bg-secondary text-primary absolute top-2/4 translate-y-[-50%] text-4xl flex items-center justify-center cursor-pointer z-10 shadow',
     left && 'left-2',
     !left && 'right-2'
   );
@@ -26,6 +26,7 @@ const getNavigationArrow = (onClick, left) => {
 
 const Carousel = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { onSelectGame, title } = items[activeIndex];
   const itemsCount = items.length;
 
   const translateStyle = { transform: `translateX(-${activeIndex * 100}%)` };
@@ -57,11 +58,11 @@ const Carousel = ({ items }) => {
 
   return (
     <div className="w-full h-full overflow-hidden relative" {...swipeHandlers}>
-      <div className={`w-full h-full flex transition`} style={translateStyle}>
+      <div className="w-full h-full flex transition" style={translateStyle}>
         {items.map(({ id, content }) => getItem(id, content))}
       </div>
-      <span className="bg-indigo-300 rounded-full px-4 py-2 text-lg font-semibold whitespace-nowrap text-indigo-900 absolute bottom-2 left-1/2 translate-x-[-50%] shadow">
-        {items[activeIndex].title}
+      <span onClick={onSelectGame} className="rounded-full bg-secondary px-4 py-2 text-xl font-semibold text-primary whitespace-nowrap absolute bottom-2 left-1/2 translate-x-[-50%] shadow">
+        {title}
       </span>
       {getNavigationArrow(goToPrevious, true)}
       {getNavigationArrow(goToNext, false)}
