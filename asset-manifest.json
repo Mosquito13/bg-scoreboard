@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/bg-scoreboard/static/css/main.9f6f98a0.css",
-    "main.js": "/bg-scoreboard/static/js/main.29feda1d.js",
+    "main.css": "/bg-scoreboard/static/css/main.d8d14eb9.css",
+    "main.js": "/bg-scoreboard/static/js/main.83fa4e35.js",
     "static/media/GreatWesternTrailCover.png": "/bg-scoreboard/static/media/GreatWesternTrailCover.5e71eb37b2f537783a04.png",
     "static/media/BrazilImperialCover.png": "/bg-scoreboard/static/media/BrazilImperialCover.c4c082a6626162ab43e6.png",
     "static/media/FeastForOdinCover.png": "/bg-scoreboard/static/media/FeastForOdinCover.8abcf95f898e3867d8fb.png",
@@ -20,6 +20,17 @@
     "static/media/rivers.svg": "/bg-scoreboard/static/media/rivers.92e5500db0bb7923542846d3008d46a2.svg",
     "static/media/wetlands.svg": "/bg-scoreboard/static/media/wetlands.d199188969026a1bb9ca794d10c2b5f5.svg",
     "static/media/prairies.svg": "/bg-scoreboard/static/media/prairies.0cb55104c100e588bb45102c097a2435.svg",
+    "static/media/cattle.svg": "/bg-scoreboard/static/media/cattle.05ddf2d850bea0f26607a7822e1dbfed.svg",
+    "static/media/worker.svg": "/bg-scoreboard/static/media/worker.46fbcd564570aa7df30151cbc9030d54.svg",
+    "static/media/objective.svg": "/bg-scoreboard/static/media/objective.08e99b2fef12b300f63c5c88d0a38e09.svg",
+    "static/media/money.svg": "/bg-scoreboard/static/media/money.bf5414f146e824d8fce95a5045038494.svg",
+    "static/media/hazard.svg": "/bg-scoreboard/static/media/hazard.d136228512c1ab9031b89176226902b7.svg",
+    "static/media/train_station.svg": "/bg-scoreboard/static/media/train_station.07ed1afeb5481d58d12b57d100897777.svg",
+    "static/media/job_market.svg": "/bg-scoreboard/static/media/job_market.370d1d7a6ea57205f1208e7cd882e4eb.svg",
+    "static/media/player_board.svg": "/bg-scoreboard/static/media/player_board.922c332aafbcae330f3990a56d67dddb.svg",
+    "static/media/station_master_task.svg": "/bg-scoreboard/static/media/station_master_task.fb263ad96603a72183ac970c2b0168e7.svg",
+    "static/media/city.svg": "/bg-scoreboard/static/media/city.52f1fec97153e8d0b6c77b8417911867.svg",
+    "static/media/building.svg": "/bg-scoreboard/static/media/building.7d8a33177a343f1a439dcc9b0c691022.svg",
     "static/media/light_green.svg": "/bg-scoreboard/static/media/light_green.4deca09d3df3c5ec72429e628295a061.svg",
     "static/media/red.svg": "/bg-scoreboard/static/media/red.710c9bb472402a957bddc5e9a9484d78.svg",
     "static/media/yellow.svg": "/bg-scoreboard/static/media/yellow.1c23bbf6820c592df420338f1177a79f.svg",
@@ -31,11 +42,11 @@
     "static/media/gray.svg": "/bg-scoreboard/static/media/gray.e3a36e02a61eaa460ba30ce24f960646.svg",
     "static/media/dark_green.svg": "/bg-scoreboard/static/media/dark_green.773200b54f6f1b45791a92a7279f9657.svg",
     "index.html": "/bg-scoreboard/index.html",
-    "main.9f6f98a0.css.map": "/bg-scoreboard/static/css/main.9f6f98a0.css.map",
-    "main.29feda1d.js.map": "/bg-scoreboard/static/js/main.29feda1d.js.map"
+    "main.d8d14eb9.css.map": "/bg-scoreboard/static/css/main.d8d14eb9.css.map",
+    "main.83fa4e35.js.map": "/bg-scoreboard/static/js/main.83fa4e35.js.map"
   },
   "entrypoints": [
-    "static/css/main.9f6f98a0.css",
-    "static/js/main.29feda1d.js"
+    "static/css/main.d8d14eb9.css",
+    "static/js/main.83fa4e35.js"
   ]
 }
