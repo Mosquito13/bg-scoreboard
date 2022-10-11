@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 import NavigationStep from '../../common/layouts/NavigationStep';
 import PlayerScoreInput, { TYPE_BOOLEAN } from '../../common/components/PlayerScoreInput';
+import CriteriaTitle from '../components/CriteriaTitle';
+import criteria from '../mapping/criteria';
+
 import { getPlayerList } from '../redux/selectors';
 import { setPlayerBoard } from '../redux';
 
@@ -30,9 +33,7 @@ const PlayerBoard = () => {
 
   return (
     <NavigationStep onClickNext={handleClickNext}>
-      <div className="w-full h-16 flex items-center justify-center text-2xl">
-        Tabuleiro de jogador
-      </div>
+      <CriteriaTitle {...criteria.PLAYER_BOARD} />
       <PlayerScoreInput
         players={playerList}
         score={score}

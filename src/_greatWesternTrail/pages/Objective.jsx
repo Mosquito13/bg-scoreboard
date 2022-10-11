@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 import NavigationStep from '../../common/layouts/NavigationStep';
 import PlayerScoreInput from '../../common/components/PlayerScoreInput';
+import CriteriaTitle from '../components/CriteriaTitle';
+import criteria from '../mapping/criteria';
+
 import { getPlayerList } from '../redux/selectors';
 import { setObjective } from '../redux';
 
@@ -30,9 +33,7 @@ const Objective = () => {
 
   return (
     <NavigationStep onClickNext={handleClickNext}>
-      <div className="w-full h-16 flex items-center justify-center text-2xl">
-        Objetivos
-      </div>
+      <CriteriaTitle {...criteria.OBJECTIVE} />
       <PlayerScoreInput
         players={playerList}
         score={score}

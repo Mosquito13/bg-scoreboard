@@ -12,9 +12,6 @@ module.exports = {
       'inter': ['Inter Tight', 'cursive']
     },
     colors: {
-      yellow: 'yellow',
-      green: 'green',
-      red: 'red',
       white: '#ffffff',
       primary: 'var(--color-primary)',
       'primary-alt': 'var(--color-primary-alt)',

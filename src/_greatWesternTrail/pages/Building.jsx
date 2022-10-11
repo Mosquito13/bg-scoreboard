@@ -1,10 +1,14 @@
 import { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+
 import PlayerScoreInput from '../../common/components/PlayerScoreInput';
 import NavigationStep from '../../common/layouts/NavigationStep';
-import { setBuilding } from '../redux';
+import CriteriaTitle from '../components/CriteriaTitle';
+import criteria from '../mapping/criteria';
+
 import { getPlayerList } from '../redux/selectors';
+import { setBuilding } from '../redux';
 
 const initialValues = [0, 0, 0, 0];
 
@@ -29,9 +33,7 @@ const Building = () => {
 
   return (
     <NavigationStep onClickNext={handleClickNext}>
-      <div className="w-full h-16 flex items-center justify-center text-2xl">
-        Construções
-      </div>
+      <CriteriaTitle {...criteria.BUILDING} />
       <PlayerScoreInput
         players={playerList}
         score={score}

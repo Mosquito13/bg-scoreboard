@@ -1,13 +1,15 @@
-import { useCallback } from 'react';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import Counter, { SIZE_SMALL } from '../../common/components/Counter';
 
 import NavigationStep from '../../common/layouts/NavigationStep';
+import CriteriaTitle from '../components/CriteriaTitle';
+import criteria from '../mapping/criteria';
 import cities from '../mapping/cities';
-import { setCityByPlayer } from '../redux';
+
 import { getPlayerList } from '../redux/selectors';
+import { setCityByPlayer } from '../redux';
 
 const City = () => {
   const { playerIndex } = useParams();
@@ -42,14 +44,15 @@ const City = () => {
 
   return (
     <NavigationStep onClickNext={handleClickNext}>
-      <div className="w-full h-16 flex items-center justify-center text-2xl">
-        {`Cidades - ${playerList[playerIndex]}`}
-      </div>
-      <div className="w-full flex flex-col">
+      <CriteriaTitle
+        title={`${criteria.CITY.title} - ${playerList[playerIndex]}`}
+        IconCmp={criteria.CITY.IconCmp}
+      />
+      <div className="w-full flex flex-col mt-2">
         {Object.keys(cities).map((key) => {
           return (
             <div key={key} className="flex justify-between items-center">
-              <div >
+              <div className="font-semibold">
                 {cities[key].title}
               </div>
               <Counter

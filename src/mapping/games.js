@@ -4,6 +4,7 @@ import FeastForOdinCover from '../assets/image/FeastForOdinCover.png';
 import BrazilImperialCover from '../assets/image/BrazilImperialCover.png';
 import GreatWesternTrailCover from '../assets/image/GreatWesternTrailCover.png';
 
+import { ReactComponent as GreatWesternTrailLogo } from '../assets/svg/greatWesternTrail/logo.svg';
 import { ReactComponent as ArboretumLogo } from '../assets/svg/arboretum/logo.svg';
 import { ReactComponent as CascadiaLogo } from '../assets/svg/cascadia/logo.svg';
 
@@ -31,8 +32,10 @@ const gamesMapping = {
   GREAT_WESTERN_TRAIL: {
     id: 'greatWesternTrail',
     title: 'Great Western Trail',
+    theme: 'theme-great-western-trail',
     cover: GreatWesternTrailCover,
-    routes: greatWesternTrailRoutes
+    routes: greatWesternTrailRoutes,
+    logo: GreatWesternTrailLogo
   },
   BRAZIL_IMPERIAL: {
     id: 'brazilImperial',

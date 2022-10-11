@@ -12,7 +12,7 @@ const PlayerList = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect(() => setGame('cascadia'));
+  useEffect(() => setGame('cascadia'), [setGame]);
 
   return (
     <SimplePlayerList

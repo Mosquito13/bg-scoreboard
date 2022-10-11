@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 import NavigationStep from '../../common/layouts/NavigationStep';
 import PlayerScoreInput from '../../common/components/PlayerScoreInput';
+import CriteriaTitle from '../components/CriteriaTitle';
+import criteria from '../mapping/criteria';
+
 import { getPlayerList } from '../redux/selectors';
 import { setStationMasterTask } from '../redux';
 
@@ -30,9 +33,7 @@ const StationMasterTask = () => {
 
   return (
     <NavigationStep onClickNext={handleClickNext}>
-      <div className="w-full h-16 flex items-center justify-center text-2xl">
-        Tarefas de mestre da estação
-      </div>
+      <CriteriaTitle {...criteria.STATION_MASTER_TASK} />
       <PlayerScoreInput
         players={playerList}
         score={score}

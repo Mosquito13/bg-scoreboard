@@ -23,4 +23,11 @@
     --color-secondary: #2d363f;
     --color-secondary-alt: #bbaeb1;
   }
+
+  .theme-great-western-trail {
+    --color-primary: #dbc59b;
+    --color-primary-alt: #b4a07b;
+    --color-secondary: #0e2739;
+    --color-secondary-alt: #a3a194;
+  }
 }

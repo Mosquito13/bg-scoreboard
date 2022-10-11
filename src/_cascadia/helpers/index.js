@@ -41,7 +41,7 @@ export const calculateHabitatBonus = (criteriaScore, playerCount) => {
       } else {
         bonus[index] = threeOrFourPlayerDrawBonus;
       }
-    } else if (value === secondHighestValue && countSecondPlace === 1) {
+    } else if (value === secondHighestValue && countFirstPlace === 1 && countSecondPlace === 1) {
       bonus[index] = secondPlaceBonus;
     }
   });

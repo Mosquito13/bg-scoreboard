@@ -12,7 +12,7 @@ const PlayerList = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect(() => setGame('arboretum'));
+  useEffect(() => setGame('arboretum'), [setGame]);
 
   return (
     <SimplePlayerList
