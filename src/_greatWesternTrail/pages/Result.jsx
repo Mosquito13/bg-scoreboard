@@ -1,7 +1,12 @@
 import { useSelector } from 'react-redux';
-import SvgWrapper from '../../common/components/SvgWrapper';
-import criteria from '../mapping/criteria';
 
+import Col, { colAlign, colType, colWidth } from '../../common/components/Result/Col';
+import Row, { rowHeight, rowType } from '../../common/components/Result/Row';
+import SvgWrapper from '../../common/components/SvgWrapper';
+import TableBody from '../../common/components/Result/TableBody';
+import Table from '../../common/components/Result/Table';
+
+import criteria from '../mapping/criteria';
 import { getAll, getPlayerList } from '../redux/selectors';
 
 const Result = () => {
@@ -16,12 +21,12 @@ const Result = () => {
     const IconCmp = criteria[key].IconCmp;
 
     rows.push(
-      <div key={key} className="h-12 flex items-center justify-center bg-primary odd:bg-primary-alt">
-        <div className="flex-[0_0_3rem] h-full p-1 overflow-hidden">
+      <Row key={key} height={rowHeight.LG}>
+        <Col type={colType.CRITERIA} width={colWidth.SM} align={colAlign.CENTER} contentIcon>
           <SvgWrapper>
             <IconCmp />
           </SvgWrapper>
-        </div>
+        </Col>
         {playerList.map((player, index) => {
           let storedPlayerCriteriaScore = score[criteria[key].key][index];
           let finalPlayerCriteriaScore = 0;
@@ -39,37 +44,37 @@ const Result = () => {
           totals[index] += finalPlayerCriteriaScore;
 
           return (
-            <div key={`${key}_${index}`} className="flex-1 flex justify-end pr-2 text-xl font-bold">
+            <Col key={`${key}_${index}`}>
               {finalPlayerCriteriaScore}
-            </div>
+            </Col>
           );
         })}
-      </div>
+      </Row>
     );
   });
 
   return (
-    <div className="w-full max-h-full flex flex-col border-2 border-secondary rounded-md overflow-hidden">
-      <div className="flex border-b-2 border-b-secondary text-lg font-semibold bg-secondary text-white">
-        <div className="flex-[0_0_3rem]" />
+    <Table>
+      <Row type={rowType.HEADER}>
+        <Col width={colWidth.SM} />
         {playerList.map((player, index) => (
-          <div key={index} className="flex-1 flex justify-end mx-0.5 overflow-hidden">
+          <Col key={index} type={colType.VALUE}>
             <span className="text-ellipsis whitespace-nowrap overflow-hidden">{player}</span>
-          </div>
+          </Col>
         ))}
-      </div>
-      <div className="flex flex-col overflow-y-auto">
+      </Row>
+      <TableBody>
         {rows}
-      </div>
-      <div className="flex border-t-2 border-t-secondary text-lg font-semibold bg-secondary text-white">
-        <div className="flex-[0_0_3rem]" />
+      </TableBody>
+      <Row type={rowType.FOOTER}>
+      <Col width={colWidth.SM} align={colAlign.LEFT}>Total</Col>
         {playerList.map((player, index) => (
-          <div key={index} className="flex-1 flex justify-end mx-0.5 pr-2">
+          <Col key={index}>
             {totals[index] || 0}
-          </div>
+          </Col>
         ))}
-      </div>
-    </div>
+      </Row>
+    </Table>
   );
 };
 

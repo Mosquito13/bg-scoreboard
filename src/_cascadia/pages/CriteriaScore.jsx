@@ -3,13 +3,15 @@ import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import criteria from '../mapping/criteria';
-import NavigationStep from '../../common/layouts/NavigationStep';
 import PlayerScoreInput from '../../common/components/PlayerScoreInput';
+import NavigationStep from '../../common/layouts/NavigationStep';
+import CriteriaTitle from '../../common/components/CriteriaTitle';
+
+import criteria from '../mapping/criteria';
+
 import { findCriteriaIndex } from '../helpers';
 import { setCriteriaScore } from '../redux';
 import { getPlayerList } from '../redux/selectors';
-import SvgWrapper from '../../common/components/SvgWrapper';
 
 const initialValues = [0, 0, 0, 0];
 
@@ -54,14 +56,7 @@ const Criteria = () => {
 
   return (
     <NavigationStep onClickNext={handleClickNext}>
-      <div className="w-full h-16 flex items-center justify-center text-2xl">
-        <div className="h-full w-10 mr-4">
-          <SvgWrapper>
-            <IconCmp />
-          </SvgWrapper>
-        </div>
-        <span>{title}</span>
-      </div>
+      <CriteriaTitle title={title} IconCmp={IconCmp} />
       <PlayerScoreInput
         players={playerList}
         score={score}

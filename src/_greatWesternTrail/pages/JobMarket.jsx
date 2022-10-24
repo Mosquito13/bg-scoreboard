@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import NavigationStep from '../../common/layouts/NavigationStep';
 import PlayerScoreInput, { TYPE_BOOLEAN } from '../../common/components/PlayerScoreInput';
-import CriteriaTitle from '../components/CriteriaTitle';
+import CriteriaTitle from '../../common/components/CriteriaTitle';
 import criteria from '../mapping/criteria';
 
 import { getPlayerList } from '../redux/selectors';

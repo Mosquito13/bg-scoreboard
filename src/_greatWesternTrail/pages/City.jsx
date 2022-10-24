@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Counter, { SIZE_SMALL } from '../../common/components/Counter';
 
 import NavigationStep from '../../common/layouts/NavigationStep';
-import CriteriaTitle from '../components/CriteriaTitle';
+import CriteriaTitle from '../../common/components/CriteriaTitle';
 import criteria from '../mapping/criteria';
 import cities from '../mapping/cities';
 
@@ -45,8 +45,9 @@ const City = () => {
   return (
     <NavigationStep onClickNext={handleClickNext}>
       <CriteriaTitle
-        title={`${criteria.CITY.title} - ${playerList[playerIndex]}`}
+        title={criteria.CITY.title}
         IconCmp={criteria.CITY.IconCmp}
+        playerName={playerList[playerIndex]}
       />
       <div className="w-full flex flex-col mt-2">
         {Object.keys(cities).map((key) => {

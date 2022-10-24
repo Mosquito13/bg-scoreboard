@@ -1,18 +1,18 @@
 import { useCallback, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
-import NavigationStep from '../../common/layouts/NavigationStep';
 import PlayerScoreInput from '../../common/components/PlayerScoreInput';
+import NavigationStep from '../../common/layouts/NavigationStep';
 import CriteriaTitle from '../../common/components/CriteriaTitle';
-import criteria from '../mapping/criteria';
+import negativeCriteria from '../mapping/negativeCriteria';
 
 import { getPlayerList } from '../redux/selectors';
-import { setObjective } from '../redux';
+import { setScoreByTypeAndCriteria } from '../redux';
 
 const initialValues = [0, 0, 0, 0];
 
-const Objective = () => {
+const NegativeHouses = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const playerList = useSelector(getPlayerList);
@@ -27,20 +27,24 @@ const Objective = () => {
   }, [score]);
 
   const handleClickNext = useCallback(() => {
-    dispatch(setObjective(score));
-    navigate('../greatWesternTrail/station-master-task');
+    dispatch(setScoreByTypeAndCriteria({
+      type: 'negative',
+      criteria: negativeCriteria.HOUSES.key,
+      score
+    }));
+    navigate('../feastForOdin/penalties');
   }, [score, dispatch, navigate]);
 
   return (
     <NavigationStep onClickNext={handleClickNext}>
-      <CriteriaTitle {...criteria.OBJECTIVE} />
+      <CriteriaTitle title={negativeCriteria.HOUSES.title} />
       <PlayerScoreInput
-        players={playerList}
         score={score}
+        players={playerList}
         onChange={(value, index) => setScoreByIndex(value, index)}
       />
     </NavigationStep>
   );
 };
 
-export default Objective;
+export default NegativeHouses;

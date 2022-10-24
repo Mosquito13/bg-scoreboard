@@ -5,11 +5,13 @@ import BrazilImperialCover from '../assets/image/BrazilImperialCover.png';
 import GreatWesternTrailCover from '../assets/image/GreatWesternTrailCover.png';
 
 import { ReactComponent as GreatWesternTrailLogo } from '../assets/svg/greatWesternTrail/logo.svg';
+import { ReactComponent as FeastForOdinLogo } from '../assets/svg/feastForOdin/logo.svg';
 import { ReactComponent as ArboretumLogo } from '../assets/svg/arboretum/logo.svg';
 import { ReactComponent as CascadiaLogo } from '../assets/svg/cascadia/logo.svg';
 
 import cascadiaRoutes from '../_cascadia/mapping/routes';
 import arboretumRoutes from '../_arboretum/mapping/routes';
+import feastForOdinRoutes from '../_feastForOdin/mapping/routes';
 import greatWesternTrailRoutes from '../_greatWesternTrail/mapping/routes';
 
 const gamesMapping = {
@@ -45,9 +47,11 @@ const gamesMapping = {
   },
   FEAST_FOR_ODIN: {
     id: 'feastForOdin',
-    title: 'Banquete à Odin',
+    title: 'Um Banquete à Odin',
+    theme: 'theme-feast-for-odin',
     cover: FeastForOdinCover,
-    routes: []
+    routes: feastForOdinRoutes,
+    logo: FeastForOdinLogo
   }
 };
 

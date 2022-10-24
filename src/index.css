@@ -30,4 +30,11 @@
     --color-secondary: #0e2739;
     --color-secondary-alt: #a3a194;
   }
+
+  .theme-feast-for-odin {
+    --color-primary: #6583a8;
+    --color-primary-alt: #4a6c96;
+    --color-secondary: #060a0f;
+    --color-secondary-alt: #293542;
+  }
 }

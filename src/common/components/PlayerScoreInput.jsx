@@ -1,5 +1,6 @@
 import BooleanField from './Fields/BooleanField';
 import NumberField from './Fields/NumberField';
+import Ellipsis from './Ellipsis';
 
 const TYPE_NUMBER = 'number';
 const TYPE_BOOLEAN = 'boolean';
@@ -10,9 +11,9 @@ const PlayerScoreInput = ({ players, score, onChange, type = TYPE_NUMBER }) => {
       {players.map((name, index) => (
         <div key={index} className="flex mt-4">
           <div className="flex-1 flex items-center text-xl overflow-hidden">
-            <span className="whitespace-nowrap text-ellipsis overflow-hidden">
+            <Ellipsis>
               {name}
-            </span>
+            </Ellipsis>
           </div>
           <div className="flex-[0_0_5rem] ml-2 flex justify-end">
             {type === TYPE_NUMBER && (

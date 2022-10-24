@@ -2,9 +2,9 @@ import { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+import CriteriaTitle from '../../common/components/CriteriaTitle';
 import PlayerScoreInput from '../../common/components/PlayerScoreInput';
 import NavigationStep from '../../common/layouts/NavigationStep';
-import CriteriaTitle from '../components/CriteriaTitle';
 import criteria from '../mapping/criteria';
 
 import { getPlayerList } from '../redux/selectors';
