@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/bg-scoreboard/static/css/main.c5ee7ba0.css",
-    "main.js": "/bg-scoreboard/static/js/main.503612d4.js",
+    "main.js": "/bg-scoreboard/static/js/main.af345ebc.js",
     "static/media/GreatWesternTrailCover.png": "/bg-scoreboard/static/media/GreatWesternTrailCover.5e71eb37b2f537783a04.png",
     "static/media/BrazilImperialCover.png": "/bg-scoreboard/static/media/BrazilImperialCover.c4c082a6626162ab43e6.png",
     "static/media/logo.svg": "/bg-scoreboard/static/media/logo.4d40140757b5d5032d5dbd116285955f.svg",
@@ -14,7 +14,7 @@
     "static/media/hawk.svg": "/bg-scoreboard/static/media/hawk.5af8c2656dc89a5f46d10324b29e04c2.svg",
     "static/media/CascadiaCover.png": "/bg-scoreboard/static/media/CascadiaCover.4b334069a9355badbc5a.png",
     "static/media/nature_token.svg": "/bg-scoreboard/static/media/nature_token.e426ef069054b9e789b8e5cf20c44774.svg",
-    "static/media/travolta.svg": "/bg-scoreboard/static/media/travolta.e039d6c5c4b36d7452a18d0e0eb55d07.svg",
+    "static/media/travolta.svg": "/bg-scoreboard/static/media/travolta.483a78f49a5570603e4f4b538dc38a35.svg",
     "static/media/forests.svg": "/bg-scoreboard/static/media/forests.f26143a4d20c1bf007371601b0c2c5f8.svg",
     "static/media/mountains.svg": "/bg-scoreboard/static/media/mountains.46bdd4603ec9d2890f9ada80bc7c9fa6.svg",
     "static/media/rivers.svg": "/bg-scoreboard/static/media/rivers.92e5500db0bb7923542846d3008d46a2.svg",
@@ -43,10 +43,10 @@
     "static/media/dark_green.svg": "/bg-scoreboard/static/media/dark_green.773200b54f6f1b45791a92a7279f9657.svg",
     "index.html": "/bg-scoreboard/index.html",
     "main.c5ee7ba0.css.map": "/bg-scoreboard/static/css/main.c5ee7ba0.css.map",
-    "main.503612d4.js.map": "/bg-scoreboard/static/js/main.503612d4.js.map"
+    "main.af345ebc.js.map": "/bg-scoreboard/static/js/main.af345ebc.js.map"
   },
   "entrypoints": [
     "static/css/main.c5ee7ba0.css",
-    "static/js/main.503612d4.js"
+    "static/js/main.af345ebc.js"
   ]
 }
