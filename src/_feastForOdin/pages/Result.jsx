@@ -76,7 +76,7 @@ const Result = () => {
       <Row type={rowType.HEADER}>
         <Col width={colWidth.LG} />
         {playerList.map((player, index) => (
-          <Col key={index} type={colType.VALUE}>
+          <Col key={`header_player_${index}`} type={colType.VALUE}>
             <span className="text-ellipsis whitespace-nowrap overflow-hidden">{player}</span>
           </Col>
         ))}
@@ -85,19 +85,19 @@ const Result = () => {
         {positiveRows}
         <Row type={rowType.SUBTOTAL} height={rowHeight.MD}>
           <Col type={colType.CRITERIA} width={colWidth.LG} align={colAlign.LEFT}>Subtotal positivo</Col>
-          {playerList.map((player, index) => <Col>{positiveSubtotal[index]}</Col>)}
+          {playerList.map((player, index) => <Col key={`positive_subtotal_${index}`}>{positiveSubtotal[index]}</Col>)}
         </Row>
         {negativeRows}
         <Row type={rowType.SUBTOTAL} height={rowHeight.MD}>
           <Col type={colType.CRITERIA} width={colWidth.LG} align={colAlign.LEFT}>Subtotal negativo</Col>
-          {playerList.map((player, index) => <Col>{negativeSubtotal[index]}</Col>)}
+          {playerList.map((player, index) => <Col key={`negative_subtotal_${index}`}>{negativeSubtotal[index]}</Col>)}
         </Row>
       </TableBody>
       <Row type={rowType.FOOTER}>
         <Col type={colType.VALUE} width={colWidth.LG} align={colAlign.LEFT}>Total</Col>
         {playerList.map((player, index) => (
-          <Col key={index} type={colType.VALUE}>
-            {positiveSubtotal[index] - negativeSubtotal[index] || 0}
+          <Col key={`total_${index}`} type={colType.VALUE}>
+            {positiveSubtotal[index] + negativeSubtotal[index] || 0}
           </Col>
         ))}
       </Row>
