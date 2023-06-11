@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/bg-scoreboard/static/css/main.c5ee7ba0.css",
-    "main.js": "/bg-scoreboard/static/js/main.af345ebc.js",
+    "main.css": "/bg-scoreboard/static/css/main.5e830958.css",
+    "main.js": "/bg-scoreboard/static/js/main.10a42684.js",
     "static/media/GreatWesternTrailCover.png": "/bg-scoreboard/static/media/GreatWesternTrailCover.5e71eb37b2f537783a04.png",
     "static/media/BrazilImperialCover.png": "/bg-scoreboard/static/media/BrazilImperialCover.c4c082a6626162ab43e6.png",
     "static/media/logo.svg": "/bg-scoreboard/static/media/logo.4d40140757b5d5032d5dbd116285955f.svg",
     "static/media/FeastForOdinCover.png": "/bg-scoreboard/static/media/FeastForOdinCover.8abcf95f898e3867d8fb.png",
     "static/media/ArboretumCover.png": "/bg-scoreboard/static/media/ArboretumCover.269af546f86d1f8f36d8.png",
+    "static/media/LostRuinsOfArnakCover.png": "/bg-scoreboard/static/media/LostRuinsOfArnakCover.03ebb3276bd37cfde702.png",
     "static/media/fox.svg": "/bg-scoreboard/static/media/fox.b7ddfdbf4733b3df5d9f2a5b2146f356.svg",
     "static/media/elk.svg": "/bg-scoreboard/static/media/elk.d06c96f559abf5ad213d9a0979aae657.svg",
     "static/media/bear.svg": "/bg-scoreboard/static/media/bear.019552f57840538db89d0e85fad87903.svg",
@@ -42,11 +43,11 @@
     "static/media/gray.svg": "/bg-scoreboard/static/media/gray.e3a36e02a61eaa460ba30ce24f960646.svg",
     "static/media/dark_green.svg": "/bg-scoreboard/static/media/dark_green.773200b54f6f1b45791a92a7279f9657.svg",
     "index.html": "/bg-scoreboard/index.html",
-    "main.c5ee7ba0.css.map": "/bg-scoreboard/static/css/main.c5ee7ba0.css.map",
-    "main.af345ebc.js.map": "/bg-scoreboard/static/js/main.af345ebc.js.map"
+    "main.5e830958.css.map": "/bg-scoreboard/static/css/main.5e830958.css.map",
+    "main.10a42684.js.map": "/bg-scoreboard/static/js/main.10a42684.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5ee7ba0.css",
-    "static/js/main.af345ebc.js"
+    "static/css/main.5e830958.css",
+    "static/js/main.10a42684.js"
   ]
 }
