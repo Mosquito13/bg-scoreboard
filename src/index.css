@@ -37,4 +37,11 @@
     --color-secondary: #060a0f;
     --color-secondary-alt: #293542;
   }
+
+  .theme-lost-ruins-of-arnak {
+    --color-primary: #331c15;
+    --color-primary-alt: #57311f;
+    --color-secondary: #b69b55;
+    --color-secondary-alt: #E6DDD1;
+  }
 }
