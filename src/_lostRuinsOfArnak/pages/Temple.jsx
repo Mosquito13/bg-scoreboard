@@ -45,7 +45,11 @@ const Temple = () => {
 
   return (
     <NavigationStep onClickNext={handleClickNext}>
-      <CriteriaTitle title={criteria.TEMPLE.title} playerName={playerList[playerIndex]} />
+      <CriteriaTitle
+        title={criteria.TEMPLE.title}
+        IconCmp={criteria.TEMPLE.IconCmp}
+        playerName={playerList[playerIndex]}
+      />
       <div className="w-full flex flex-col mt-2">
         {Object.values(temple).map(({ key, title }) => (
           <div key={key} className="flex justify-between items-center">

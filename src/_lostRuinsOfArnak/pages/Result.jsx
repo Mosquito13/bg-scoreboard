@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import Col, { colAlign, colType, colWidth } from '../../common/components/Result/Col';
 import Row, { rowHeight, rowType } from '../../common/components/Result/Row';
 import TableBody from '../../common/components/Result/TableBody';
+import SvgWrapper from '../../common/components/SvgWrapper';
 import Table from '../../common/components/Result/Table';
 
 import criteria from '../mapping/criteria';
@@ -17,12 +18,14 @@ const Result = () => {
 
   Object.keys(criteria).forEach((key) => {
     const translator = criteria[key]?.translator;
-    const title = criteria[key].title;
+    const IconCmp = criteria[key].IconCmp;
 
     rows.push(
       <Row key={key} height={rowHeight.LG}>
-        <Col type={colType.CRITERIA} width={colWidth.LG} align={colAlign.LEFT}>
-          {title}
+        <Col type={colType.CRITERIA} width={colWidth.SM} align={colAlign.LEFT}>
+          <SvgWrapper>
+            <IconCmp />
+          </SvgWrapper>
         </Col>
         {playerList.map((player, index) => {
           let storedPlayerCriteriaScore = score[criteria[key].key][index];
@@ -64,7 +67,7 @@ const Result = () => {
         {rows}
       </TableBody>
       <Row type={rowType.FOOTER}>
-      <Col width={colWidth.LG} align={colAlign.LEFT}>Total</Col>
+      <Col width={colWidth.SM} align={colAlign.LEFT}>Total</Col>
         {playerList.map((player, index) => (
           <Col key={index}>
             {totals[index] || 0}
