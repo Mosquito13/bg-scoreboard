@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/bg-scoreboard/static/css/main.4e2539fe.css",
-    "main.js": "/bg-scoreboard/static/js/main.f4c4c23d.js",
+    "main.js": "/bg-scoreboard/static/js/main.e9448c98.js",
     "static/media/GreatWesternTrailCover.png": "/bg-scoreboard/static/media/GreatWesternTrailCover.5e71eb37b2f537783a04.png",
     "static/media/BrazilImperialCover.png": "/bg-scoreboard/static/media/BrazilImperialCover.c4c082a6626162ab43e6.png",
     "static/media/logo.svg": "/bg-scoreboard/static/media/logo.4d40140757b5d5032d5dbd116285955f.svg",
@@ -15,7 +15,7 @@
     "static/media/hawk.svg": "/bg-scoreboard/static/media/hawk.5af8c2656dc89a5f46d10324b29e04c2.svg",
     "static/media/CascadiaCover.png": "/bg-scoreboard/static/media/CascadiaCover.4b334069a9355badbc5a.png",
     "static/media/nature_token.svg": "/bg-scoreboard/static/media/nature_token.e426ef069054b9e789b8e5cf20c44774.svg",
-    "static/media/travolta.svg": "/bg-scoreboard/static/media/travolta.e039d6c5c4b36d7452a18d0e0eb55d07.svg",
+    "static/media/travolta.svg": "/bg-scoreboard/static/media/travolta.483a78f49a5570603e4f4b538dc38a35.svg",
     "static/media/item.svg": "/bg-scoreboard/static/media/item.7b617d0c82e62b39a089e516a0fa6f36.svg",
     "static/media/temple.svg": "/bg-scoreboard/static/media/temple.7cf64eef61c2d6149787ca0950b8b4e4.svg",
     "static/media/guardian.svg": "/bg-scoreboard/static/media/guardian.ee93ccf7e40a8004063d465e4765597f.svg",
@@ -52,10 +52,10 @@
     "static/media/dark_green.svg": "/bg-scoreboard/static/media/dark_green.773200b54f6f1b45791a92a7279f9657.svg",
     "index.html": "/bg-scoreboard/index.html",
     "main.4e2539fe.css.map": "/bg-scoreboard/static/css/main.4e2539fe.css.map",
-    "main.f4c4c23d.js.map": "/bg-scoreboard/static/js/main.f4c4c23d.js.map"
+    "main.e9448c98.js.map": "/bg-scoreboard/static/js/main.e9448c98.js.map"
   },
   "entrypoints": [
     "static/css/main.4e2539fe.css",
-    "static/js/main.f4c4c23d.js"
+    "static/js/main.e9448c98.js"
   ]
 }
