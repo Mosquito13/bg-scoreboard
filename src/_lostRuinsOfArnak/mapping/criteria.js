@@ -7,7 +7,7 @@ import { ReactComponent as GuardianIcon } from '../../assets/svg/lostRuinsOfArna
 import { ReactComponent as ItemIcon } from '../../assets/svg/lostRuinsOfArnak/item.svg';
 import { ReactComponent as FearIcon } from '../../assets/svg/lostRuinsOfArnak/fear.svg';
 
-import { templeToScore } from '../helpers/translator';
+import { fearToScore, guardianToScore, idolToScore, templeToScore } from '../helpers/translator';
 
 const criteria = {
   RESEARCH: {
@@ -29,7 +29,8 @@ const criteria = {
   IDOL: {
     key: 'idol',
     title: 'Ídolos',
-    IconCmp: IdolIcon
+    IconCmp: IdolIcon,
+    translator: idolToScore
   },
   IDOL_BOARD: {
     key: 'idolBoard',
@@ -39,7 +40,8 @@ const criteria = {
   GUARDIAN: {
     key: 'guardian',
     title: 'Guardiões',
-    IconCmp: GuardianIcon
+    IconCmp: GuardianIcon,
+    translator: guardianToScore
   },
   ITEM: {
     key: 'item',
@@ -49,7 +51,8 @@ const criteria = {
   FEAR: {
     key: 'fear',
     title: 'Medo',
-    IconCmp: FearIcon
+    IconCmp: FearIcon,
+    translator: fearToScore
   }
 };
 
